@@ -3,7 +3,7 @@
 # https://wenku.baidu.com/view/fddf6408844769eae009ed14.html?re=view
 # https://www.qianduan.net/html-special-characters-daquan/
 
-local SEGMENT_SEPARATOR=$'\ue0b0'
+#local SEGMENT_SEPARATOR=$'\ue0b0'
 local ret_status="%(?:%{$fg_bold[green]%}➜ :%{$fg_bold[red]%}➜ )"
 # local current_dir="%{$fg_bold[cyan]%}%c%{$reset_color%}"
 
@@ -46,10 +46,22 @@ local current_time="%{$fg_bold[red]%}[%{$fg_bold[white]%}20%D %*%{$fg_bold[red]%
 
 # local last_cmd=$(!!:p)
 
+# PROMPT='
+# ┌─ ${current_time} ${user_host} ${current_dir} $(git_prompt_info)
+# |       %{$fg_bold[black]%}pre_cmd:$(history | tail -n 1) %{$reset_color%}
+# └─ ${user_symbol} ${ret_status}%{$reset_color%} '
+
+# PROMPT='
+# ╭─ ${current_time} ${user_host} ${current_dir} $(git_prompt_info)
+# |       %{$fg_bold[black]%}pre_cmd:$(history | tail -n 1) %{$reset_color%}
+# ╰─ ${user_symbol} ${ret_status}%{$reset_color%} '
+
+
+
 PROMPT='
-┌─ ${current_time} ${user_host} ${current_dir} $(git_prompt_info)
-|       %{$fg_bold[black]%}pre_cmd:$(history | tail -n 1) %{$reset_color%}
-└─ ${user_symbol} ${ret_status}%{$reset_color%} '
+╭─ ${current_time} ${user_host} ${current_dir} $(git_prompt_info)
+╰─ ${user_symbol} ${ret_status}%{$reset_color%} '
+
 
 ZSH_THEME_GIT_PROMPT_PREFIX="%{$fg_bold[blue]%}git:(%{$fg[red]%}"
 ZSH_THEME_GIT_PROMPT_SUFFIX="%{$reset_color%} "
